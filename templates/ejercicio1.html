@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de descuentos y compras</title>
+    <link rel="stylesheet" type="text/css" href="/static/ejercicios.css">
+</head>
+<body>
+<div class="container">
+    <h2>Calculo de compras</h2>
+    <form action="/ejercicio1" method="POST">
+        Nombre: <input type="text" name="nombre" required>
+        <br>
+        Edad: <input type="number" name="años" required>
+        <br>
+        Cantidad de tarros de pintura: <input type="number" name="cantidad"  required>
+        <br><br>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if nombre and total_sin_descuento and descuento and total %}
+    <div>
+        <h2>Resultado</h2>
+        <p>Nombre del cliente:{{nombre}} </p>
+        <p>Total sin descuento: {{total_sin_descuento}}</p>
+        <p>El descuento es: {{descuento}}</p>
+        <p>Total a pagar es de: {{total}}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
